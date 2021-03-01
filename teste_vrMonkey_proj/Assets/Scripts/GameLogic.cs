@@ -28,6 +28,8 @@ public class GameLogic : MonoBehaviour {
     public GameObject ShockText;
     public GameObject CloakText;
     public GameObject DrainText;
+    public GameObject ShootText;
+    public GameObject HoverText;
 
     public GameObject enemyContainer;
     public GameObject enemyModel;
@@ -48,18 +50,19 @@ public class GameLogic : MonoBehaviour {
     public Text keyText;
 
 
-    public void FreezeFrame()
-    {
-        StartCoroutine(FreezeFrameRoutine());
-    }
-
-    IEnumerator FreezeFrameRoutine()
-    {
-        Debug.Log("FreezeFrame");
-        Time.timeScale = 0;
-        yield return new WaitForSecondsRealtime(0.05f);
-        Time.timeScale = 1;
-    }
+    // Makes game freeze for 5 milliseconds
+    // public void FreezeFrame() 
+    // {
+    //     StartCoroutine(FreezeFrameRoutine());
+    // }
+    //
+    // IEnumerator FreezeFrameRoutine()
+    // {
+    //     Debug.Log("FreezeFrame");
+    //     Time.timeScale = 0;
+    //     yield return new WaitForSecondsRealtime(0.05f);
+    //     Time.timeScale = 1;
+    // }
 
     public void AddChaser()
     {
@@ -200,6 +203,14 @@ public class GameLogic : MonoBehaviour {
                 player.canDrain = true;
                 DrainText.SetActive(true);
                 break;
+            case Upgrade.Type.shoot:
+                player.canShoot = true;
+                ShootText.SetActive(true);
+                break;
+            case Upgrade.Type.hover:
+                player.canHover = true;
+                HoverText.SetActive(true);
+                break;
         }
 
         StartCoroutine(EnablePlayerSkillRoutine(upgradeType));
@@ -221,7 +232,12 @@ public class GameLogic : MonoBehaviour {
                     break;
                 case Upgrade.Type.drain:
                     ShowMessageBox("You acquired the DRAIN power! Press V to drain enemies' energy! ONLY WORKS ON UNAWARE ENEMIES");
-                    player.canDrain = true;
+                    break;
+                case Upgrade.Type.shoot:
+                    ShowMessageBox("You acquired the SHOOT power! Press B to shoot a projectile that debilitates enemies!");
+                    break;
+                case Upgrade.Type.hover:
+                    ShowMessageBox("You acquired the HOVER power! Hold N to hover over enemies or obstacles at the cost of energy!");
                     break;
             }
         }
@@ -239,6 +255,12 @@ public class GameLogic : MonoBehaviour {
                 case Upgrade.Type.drain:
                     ShowMessageBox("You acquired the DRAIN power! Press Y to drain enemies' energy! ONLY WORKS ON UNAWARE ENEMIES");
                     player.canDrain = true;
+                    break;
+                case Upgrade.Type.shoot:
+                    ShowMessageBox("You acquired the SHOOT power! Press RB to shoot a projectile that debilitates enemies!");
+                    break;
+                case Upgrade.Type.hover:
+                    ShowMessageBox("You acquired the HOVER power! Hold LB to hover over enemies or obstacles at the cost of energy!");
                     break;
             }
         }

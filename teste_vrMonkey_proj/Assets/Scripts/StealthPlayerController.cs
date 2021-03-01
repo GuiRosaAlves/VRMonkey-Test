@@ -26,6 +26,8 @@ public class StealthPlayerController : Character {
     public float maxSpeed = 5.0f;
     Vector3 speed = Vector3.zero;
     float maxSpeedFraction = 0.0f;
+    public float hoverSpeed = 2f;
+    public float maxHoverHeight = 3.2f;
 
     public RobotThreadController threadController;
     public float threadWalkSpeed = 0.5f;
@@ -59,6 +61,7 @@ public class StealthPlayerController : Character {
     public float runningEnergyMultiplier = 1.5f;
     public float cloakingEnergyMultiplier = 3.5f;
     public float drainingEnergyMultiplier = 4.0f;
+    public float hoveringEnergyMultiplier = 3.5f;
     public float shockDelay = 0.3f;
     public float shockCost = 10;
     public float drainSpeed = 0;
@@ -78,6 +81,8 @@ public class StealthPlayerController : Character {
     public bool canShock = false;
     public bool canCloak = false;
     public bool canDrain = false;
+    public bool canShoot = false;
+    public bool canHover = false;
 
     public ParticleSystem warpParticles;
     
@@ -251,14 +256,14 @@ public class StealthPlayerController : Character {
                 cloakedModel.SetActive(false);
             }
         }
-        
 
+        // if (canShoot && Input.GetButtonDown("Fire") && (state == States.idle || state == States.moving))
+        // {
+        //     TODO: Make the player shoot
+        // }
 
-        if (state == States.idle && !cloaked)
+        if ((state == States.idle || state == States.moving || state == States.hovering) && !cloaked) //Movement Check
         {
- 
-        
-
             moving = false;
             inputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             inputVector = Vector3.ClampMagnitude(inputVector, 1.0f);
@@ -308,16 +313,15 @@ public class StealthPlayerController : Character {
                     {
                         runParticles.Play();
                     }
-                    
                 }
-
-
                 moving = true;
                 applyMovement(inputVector);
                 rotate(inputVector);
             }
             else
             {
+                SetState(States.idle);
+                
                 if (walkParticles.isPlaying)
                 {
                     walkParticles.Stop();
@@ -330,6 +334,24 @@ public class StealthPlayerController : Character {
                 threadController.moving = false;
             }
         }
+        
+        if(canHover && Input.GetButton("Hover")) //Always place it after Movement Check
+        {
+            transform.position += Vector3.up  * (hoverSpeed * Time.deltaTime);
+            //TODO: Set a clamp value for maximum height
+            //TODO: Create a raycast and check if I am grounded
+            //TODO: Create a hovering method and put all logic there
+            rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
+            
+            SetState(States.hovering);
+        }
+        else if (Input.GetButtonUp("Hover"))
+        {
+            rb.constraints &= ~RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
+            
+            SetState(States.idle);//TODO: Change this line to when the player hits the ground it gets set as idle
+        }
+        
         if (enableEnergyDrain)
         {
             float energyDrain= energyDrainSpeed * Time.deltaTime;
@@ -351,6 +373,11 @@ public class StealthPlayerController : Character {
             if (!moving)
             {
                 energyDrain = energyDrain * standingEnergyMultiplier;
+            }
+
+            if (state == States.hovering)
+            {
+                energyDrain = energyDrain * hoveringEnergyMultiplier;
             }
 
             if(state==States.attacking)
@@ -403,7 +430,7 @@ public class StealthPlayerController : Character {
     public void applyMovement(Vector3 direction)
     {
         float speedToUse = maxSpeed;
-
+        
         if (running)
         {
             speedToUse = speedToUse * runningSpeedMultiplier;
@@ -424,9 +451,6 @@ public class StealthPlayerController : Character {
 
         speed = newSpeed;
 
-        
-
-
         if (rb == null)
         {
             transform.position += Time.deltaTime * newSpeed;
@@ -435,6 +459,8 @@ public class StealthPlayerController : Character {
             rb.velocity = newSpeed;
 
         }
+        
+        SetState(States.moving);
     }
 
     public void rotate(Vector3 direction3d)
