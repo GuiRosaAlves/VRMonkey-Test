@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -63,7 +64,8 @@ public class StealthPlayerController : Character {
     public float drainingEnergyMultiplier = 4.0f;
     public float hoveringEnergyMultiplier = 3.5f;
     public float shockDelay = 0.3f;
-    public float shockCost = 10;
+    public float shockCost = 10f;
+    public float fireCost = 10f;
     public float drainSpeed = 0;
     public GameObject shockObject;
 
@@ -81,7 +83,7 @@ public class StealthPlayerController : Character {
     public bool canShock = false;
     public bool canCloak = false;
     public bool canDrain = false;
-    public bool canShoot = false;
+    public bool canFire = false;
     public bool canHover = false;
 
     public ParticleSystem warpParticles;
@@ -188,7 +190,6 @@ public class StealthPlayerController : Character {
         }
     }
 
-    // Update is called once per frame
     void Update() {
         if (GameLogic.instance.gameState != GameLogic.GameStates.gameplay)
         {
@@ -236,7 +237,6 @@ public class StealthPlayerController : Character {
             GameObject thisShockObject = GameObject.Instantiate(shockObject);
             thisShockObject.transform.position = transform.position;
             StartCoroutine(shockRoutine());
-
         }
 
         if (canCloak && Input.GetButtonDown("Cloak") && (state == States.idle || state == States.moving))
@@ -257,10 +257,12 @@ public class StealthPlayerController : Character {
             }
         }
 
-        // if (canShoot && Input.GetButtonDown("Fire") && (state == States.idle || state == States.moving))
-        // {
-        //     TODO: Make the player shoot
-        // }
+        if (canFire && Input.GetButtonDown("Fire") && (state == States.idle || state == States.moving))
+        {
+        //     TODO: Make the player fire
+            SetState(States.attacking);
+            Fire();
+        }
 
         if ((state == States.idle || state == States.moving || state == States.hovering) && !cloaked) //Movement Check
         {
@@ -337,18 +339,14 @@ public class StealthPlayerController : Character {
         
         if(canHover && Input.GetButton("Hover")) //Always place it after Movement Check
         {
-            transform.position += Vector3.up  * (hoverSpeed * Time.deltaTime);
-            //TODO: Set a clamp value for maximum height
+            Hover();
             //TODO: Create a raycast and check if I am grounded
-            //TODO: Create a hovering method and put all logic there
             rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
-            
             SetState(States.hovering);
         }
         else if (Input.GetButtonUp("Hover"))
         {
             rb.constraints &= ~RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
-            
             SetState(States.idle);//TODO: Change this line to when the player hits the ground it gets set as idle
         }
         
@@ -504,6 +502,23 @@ public class StealthPlayerController : Character {
                 transform.rotation = Quaternion.Lerp(transform.rotation, rotationDestination, rotateSpeed * Time.deltaTime);
             }
         }
+    }
+
+    private void Hover()
+    {
+        var position = transform.position;
+            
+        position += Vector3.up * (hoverSpeed * Time.deltaTime);
+        var maxY = Mathf.Clamp(position.y, position.y, maxHoverHeight);
+        position.y = maxY;
+            
+        transform.position = position;
+    }
+    
+    public override void Fire()
+    {
+        base.Fire();
+        SpendEnergy(fireCost);
     }
 
     public void Kill()

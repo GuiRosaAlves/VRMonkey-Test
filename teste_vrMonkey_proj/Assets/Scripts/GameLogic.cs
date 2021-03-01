@@ -28,7 +28,7 @@ public class GameLogic : MonoBehaviour {
     public GameObject ShockText;
     public GameObject CloakText;
     public GameObject DrainText;
-    public GameObject ShootText;
+    public GameObject FireText;
     public GameObject HoverText;
 
     public GameObject enemyContainer;
@@ -203,9 +203,9 @@ public class GameLogic : MonoBehaviour {
                 player.canDrain = true;
                 DrainText.SetActive(true);
                 break;
-            case Upgrade.Type.shoot:
-                player.canShoot = true;
-                ShootText.SetActive(true);
+            case Upgrade.Type.fire:
+                player.canFire = true;
+                FireText.SetActive(true);
                 break;
             case Upgrade.Type.hover:
                 player.canHover = true;
@@ -233,8 +233,8 @@ public class GameLogic : MonoBehaviour {
                 case Upgrade.Type.drain:
                     ShowMessageBox("You acquired the DRAIN power! Press V to drain enemies' energy! ONLY WORKS ON UNAWARE ENEMIES");
                     break;
-                case Upgrade.Type.shoot:
-                    ShowMessageBox("You acquired the SHOOT power! Press B to shoot a projectile that debilitates enemies!");
+                case Upgrade.Type.fire:
+                    ShowMessageBox("You acquired the FIRE power! Press B to fire a projectile that debilitates enemies!");
                     break;
                 case Upgrade.Type.hover:
                     ShowMessageBox("You acquired the HOVER power! Hold N to hover over enemies or obstacles at the cost of energy!");
@@ -256,8 +256,8 @@ public class GameLogic : MonoBehaviour {
                     ShowMessageBox("You acquired the DRAIN power! Press Y to drain enemies' energy! ONLY WORKS ON UNAWARE ENEMIES");
                     player.canDrain = true;
                     break;
-                case Upgrade.Type.shoot:
-                    ShowMessageBox("You acquired the SHOOT power! Press RB to shoot a projectile that debilitates enemies!");
+                case Upgrade.Type.fire:
+                    ShowMessageBox("You acquired the FIRE power! Press RB to fire a projectile that debilitates enemies!");
                     break;
                 case Upgrade.Type.hover:
                     ShowMessageBox("You acquired the HOVER power! Hold LB to hover over enemies or obstacles at the cost of energy!");

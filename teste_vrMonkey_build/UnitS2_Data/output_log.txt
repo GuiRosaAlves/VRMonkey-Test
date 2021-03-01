@@ -27,20 +27,20 @@ Platform assembly: C:\Users\guilh\Documents\SmartGit\VRMonkey-Test\teste_vrMonke
 Loading C:\Users\guilh\Documents\SmartGit\VRMonkey-Test\teste_vrMonkey_build\UnitS2_Data\Managed\GUIAnimatorFREE.dll into Unity Child Domain
 Platform assembly: C:\Users\guilh\Documents\SmartGit\VRMonkey-Test\teste_vrMonkey_build\UnitS2_Data\Managed\System.dll (this message is harmless)
 Platform assembly: C:\Users\guilh\Documents\SmartGit\VRMonkey-Test\teste_vrMonkey_build\UnitS2_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.403 seconds
+- Completed reload, in  0.400 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.829800 ms
+UnloadTime: 6.801800 ms
 Setting up 6 worker threads for Enlighten.
-  Thread -> id: 6cf4 -> priority: 1 
-  Thread -> id: 6110 -> priority: 1 
-  Thread -> id: fdc -> priority: 1 
-  Thread -> id: 18ec -> priority: 1 
-  Thread -> id: 31d0 -> priority: 1 
-  Thread -> id: 6e5c -> priority: 1 
+  Thread -> id: 2c4c -> priority: 1 
+  Thread -> id: 59a8 -> priority: 1 
+  Thread -> id: 4d70 -> priority: 1 
+  Thread -> id: 7014 -> priority: 1 
+  Thread -> id: 46c8 -> priority: 1 
+  Thread -> id: 2b68 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.292000 ms
+UnloadTime: 4.771800 ms
 Exception: Critical Error: "Hidden/BlitAdd" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
   at VolumetricLightRenderer.Awake () [0x00000] in <filename unknown>:0 
  
@@ -54,7 +54,7 @@ NullReferenceException: GetRef
 
 
 Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 9431.
-Total: 6.225400 ms (FindLiveObjects: 0.436100 ms CreateObjectMapping: 0.182100 ms MarkObjects: 5.335600 ms  DeleteObjects: 0.271000 ms)
+Total: 4.555700 ms (FindLiveObjects: 0.271500 ms CreateObjectMapping: 0.142800 ms MarkObjects: 3.948500 ms  DeleteObjects: 0.192500 ms)
 
 Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
   at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
@@ -252,209 +252,6 @@ hm
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Chasers 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Exception: Critical Error: "Sandbox/VolumetricLight" shader is missing. Make sure it is included in "Always Included Shaders" in ProjectSettings/Graphics.
-  at VolumetricLight.Start () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-StatEnemy alerting allies
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Chasers 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-MovingEnemy alerting allies
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Chasers 2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-hm
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Chasers 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-hm
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -470,19 +267,11 @@ hm
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-hm
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-StatEnemy alerting allies
+StatEnemy (1) alerting allies
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Chasers 1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-hm
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 

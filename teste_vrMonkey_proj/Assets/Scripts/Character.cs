@@ -37,7 +37,7 @@ public class Character : MonoBehaviour {
 
     }
 
-    public void Fire()
+    public virtual void Fire()
     {
         //Debug.Log("Fire");
 

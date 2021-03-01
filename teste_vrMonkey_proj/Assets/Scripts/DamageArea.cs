@@ -36,9 +36,11 @@ public class DamageArea : MonoBehaviour {
 	void OnTriggerEnter(Collider col)
     {
         Character colCharacter = col.GetComponent<Character>();
+        
         if(colCharacter!=null && colCharacter.friend != friend)
         {
             colCharacter.DealDamage(damage);
+            Debug.Log("OnTriggerEnter Damage Area");
             DestroyBullet();
         }
     }

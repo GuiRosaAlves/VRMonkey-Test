@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Upgrade : MonoBehaviour {
 
-    public enum Type { shock,cloak,drain, shoot, hover};
+    public enum Type { shock,cloak,drain, fire, hover};
     public Type type = Type.shock;
 
     public void OnTriggerEnter(Collider col)

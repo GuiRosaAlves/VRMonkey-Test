@@ -158,6 +158,13 @@ public class AIAgent : MonoBehaviour {
         currentState.Start(this);
     }
 
+    public void GettingShot()
+    {
+        StopAllCoroutines();
+        searchLight.enabled = false;
+        aiEnabled = false;
+    }
+    
     public bool OnDrainStart()
     {
         if (aiSight.sightState == AISight.SightStates.seeingEnemy)
