@@ -3,9 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StealthPlayerController : Character {
-
-    
+public class StealthPlayerController : Character 
+{
     Camera cam;
     public Rigidbody rb;
 
@@ -16,6 +15,7 @@ public class StealthPlayerController : Character {
     Renderer cloakedRenderer;
 
     public bool hidden;
+    public bool isGrounded = true;
 
     [Header("Movement Speed")]
     Vector3 inputVector;
@@ -78,6 +78,7 @@ public class StealthPlayerController : Character {
     [Header("Effects")]
     public ParticleSystem walkParticles;
     public ParticleSystem runParticles;
+    public ParticleSystem hoverParticles;
 
     [Header("Upgrades")]
     public bool canShock = false;
@@ -109,6 +110,8 @@ public class StealthPlayerController : Character {
         normalRenderer = normalModel.GetComponent<Renderer>();
         cloakedRenderer = cloakedModel.GetComponent<Renderer>();
 
+        hoverParticles.Stop();
+        
         if (energyBar != null)
         {
             energyBar.SetInitialValues(maxEnergy, 0, energy);
@@ -229,7 +232,6 @@ public class StealthPlayerController : Character {
 
         if (canShock && energy >= shockCost && Input.GetButtonDown("Shock") && (state == States.idle || state == States.moving))
         {
-
             SpendEnergy(shockCost);
             threadController.moving = false;
             SetState(States.shocking);
@@ -259,7 +261,6 @@ public class StealthPlayerController : Character {
 
         if (canFire && Input.GetButtonDown("Fire") && (state == States.idle || state == States.moving))
         {
-        //     TODO: Make the player fire
             SetState(States.attacking);
             Fire();
         }
@@ -339,15 +340,24 @@ public class StealthPlayerController : Character {
         
         if(canHover && Input.GetButton("Hover")) //Always place it after Movement Check
         {
+            if (isGrounded)
+                SetState(States.hovering);
+            
             Hover();
-            //TODO: Create a raycast and check if I am grounded
             rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
-            SetState(States.hovering);
+            if (!hoverParticles.isPlaying)
+                hoverParticles.Play();
+            
+            audioSource.PlayOneShot(AudioManager.getInstance().hoverSound);
         }
         else if (Input.GetButtonUp("Hover"))
         {
             rb.constraints &= ~RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
             SetState(States.idle);//TODO: Change this line to when the player hits the ground it gets set as idle
+            if (hoverParticles.isPlaying)
+                hoverParticles.Stop();
+            
+            audioSource.Stop();
         }
         
         if (enableEnergyDrain)

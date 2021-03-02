@@ -163,6 +163,9 @@ public class AIAgent : MonoBehaviour {
         StopAllCoroutines();
         searchLight.enabled = false;
         aiEnabled = false;
+        bodyRenderer.material.SetColor("_EmissionColor", Color.black);
+        searchLight.range = 0f;
+        aiSight.viewDistance = 0f;
     }
     
     public bool OnDrainStart()

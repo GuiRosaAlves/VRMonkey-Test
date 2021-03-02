@@ -12,21 +12,24 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23A7799D-A2E9-41B8-8C6D-B790C607D655/57/0dad1045/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GroundCheck.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Unity Editors/2019.3.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInput.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/HUDManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/EffectsManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ShockDamageArea.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Character.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/StealthPlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Upgrade.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DamageArea.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/AI/AIAgent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DamageArea.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GroundCheck.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/EffectsManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/StealthPlayerController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1p7cA4bFM4PIiCJ6gSczP6gUsoi" />
@@ -77,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614537426016</updated>
       <workItem from="1614537430820" duration="17659000" />
-      <workItem from="1614624948346" duration="11625000" />
+      <workItem from="1614624948346" duration="21931000" />
     </task>
     <servers />
   </component>

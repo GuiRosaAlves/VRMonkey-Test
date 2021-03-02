@@ -40,7 +40,6 @@ public class DamageArea : MonoBehaviour {
         if(colCharacter!=null && colCharacter.friend != friend)
         {
             colCharacter.DealDamage(damage);
-            Debug.Log("OnTriggerEnter Damage Area");
             DestroyBullet();
         }
     }
